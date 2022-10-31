@@ -1,0 +1,20 @@
+package com.example.ex00.qualifier;
+
+import lombok.Getter;
+import lombok.ToString;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
+@Qualifier("vips")
+@Component
+@Getter
+@ToString
+public class Vips implements Restaurant {
+    private int steakPrice = Restaurant.price-5000;
+
+    @Override
+    public boolean useSelfBar() {
+        return false;
+    }
+
+}
