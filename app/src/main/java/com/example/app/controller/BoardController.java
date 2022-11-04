@@ -3,8 +3,6 @@ package com.example.app.controller;
 import com.example.app.domain.vo.BoardVO;
 import com.example.app.service.BoardService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,27 +17,26 @@ import org.springframework.web.servlet.view.RedirectView;
 public class BoardController {
     private final BoardService boardService;
 
-    //    게시글 목록
+//    게시글 목록
     @GetMapping("/list")
     public void list(Model model){
         model.addAttribute("boards", boardService.show());
     }
 
-
-
-    //    게시글 등록
+//    게시글 등록
     @GetMapping("/write")
-    public void write(){}
-
-    @PostMapping("/write")
-    public void write(BoardVO boardVO){
-        boardService.add(boardVO);
+    public void write(Model model){
+        model.addAttribute("board", new BoardVO());
     }
 
+    @PostMapping("/write")
+    public RedirectView write(BoardVO boardVO, RedirectAttributes redirectAttributes){
+        boardService.add(boardVO);
+        redirectAttributes.addFlashAttribute("boardNumber", boardVO.getBoardNumber());
+        return new RedirectView("list");
+    }
 
-
-
-    //    게시글 수정, 게시글 상세보기
+//    게시글 수정, 게시글 상세보기
     @GetMapping(value = {"read", "update"})
     public void read(Long boardNumber, Model model){
         model.addAttribute("board", boardService.find(boardNumber));
@@ -55,13 +52,34 @@ public class BoardController {
         return new RedirectView("/board/read");
     }
 
-
-
-
-    //    게시글 삭제
+//    게시글 삭제
     @PostMapping("/delete")
     public RedirectView delete(Long boardNumber){
         boardService.delete(boardNumber);
         return new RedirectView("/board/list");
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

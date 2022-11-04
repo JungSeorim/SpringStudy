@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h3 th:object="${taskVO}">
+        <div th:text="*{kor}"></div>
+        <div th:text="*{eng}"></div>
+        <div th:text="*{math}"></div>
+        총점 : <div th:text="*{total}"></div>
+        평균 : <div th:text="*{average}"></div>
+    </h3>
+</body>
+</html>

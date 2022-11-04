@@ -7,8 +7,11 @@
     </select>
 
     <insert id="insert">
+        <selectKey keyProperty="boardNumber" order="BEFORE" resultType="long">
+            SELECT SEQ_BOARD.NEXTVAL FROM DUAL
+        </selectKey>
         INSERT INTO TBL_BOARD (BOARD_NUMBER, BOARD_TITLE, BOARD_WRITER, BOARD_CONTENT)
-        VALUES(SEQ_BOARD.NEXTVAL, #{boardTitle}, #{boardWriter}, #{boardContent})
+        VALUES(#{boardNumber}, #{boardTitle}, #{boardWriter}, #{boardContent})
     </insert>
 
     <update id="update">

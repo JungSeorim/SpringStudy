@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.test.mapper.ProductMapper">
+    <!--select의 resultType만 정해주었다-->
+    <!--그러나 Mapper.java(DAO비슷한 것)에는 적어주었다-->
+
+    <select id="selectAll" resultType="productVO">
+        SELECT product_number, product_name, product_company, product_price FROM TBL_PRODUCT
+    </select>
+
+    <!--selectKey는 내가 insert한 productNumber를 바로 가져와줌-->
+    <insert id="insert" parameterType="productVO">
+        <selectKey keyProperty="productNumber" order="BEFORE" resultType="int">
+            SELECT SEQ_PRODUCT.NEXTVAL From DUAL
+        </selectKey>
+        INSERT INTO TBL_PRODUCT
+        (product_number, product_name, product_company, product_price)
+        VALUES (SEQ_PRODUCT.NEXTVAL, #{productName}, #{productCompany}, #{productPrice})
+    </insert>
+
+    <update id="update">
+        UPDATE TBL_PRODUCT
+        SET product_name = #{productName}, product_company = #{productCompany}, product_price = #{productPrice}
+        WHERE product_number = #{productNumber}
+    </update>
+
+    <select id="select" resultType="productVO">
+        SELECT product_number, product_name, product_company, product_price FROM TBL_PRODUCT
+        WHERE product_number=#{productNumber}
+    </select>
+
+    <delete id="delete">
+        DELETE FROM TBL_PRODUCT
+        WHERE product_number=#{productNumber}
+    </delete>
+</mapper>

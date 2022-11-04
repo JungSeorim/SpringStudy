@@ -3,11 +3,13 @@ package com.example.app.service;
 import com.example.app.domain.dao.BoardDAO;
 import com.example.app.domain.vo.BoardVO;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
+@Service @Qualifier("community") @Primary
 @RequiredArgsConstructor
 public class CommunityService implements BoardService{
     private final BoardDAO boardDAO;

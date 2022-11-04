@@ -7,8 +7,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.util.List;
-
 @SpringBootTest
 @Slf4j
 public class BoardMapperTest {
@@ -20,35 +18,29 @@ public class BoardMapperTest {
         boardMapper.getList().stream().map(BoardVO::toString).forEach(log::info);
     }
 
-    // 추가
     @Test
-    public void insert(){
+    public void insertTest(){
         BoardVO boardVO = new BoardVO();
-        boardVO.setBoardNumber(100l);
-        boardVO.setBoardTitle("추가제목");
-        boardVO.setBoardContent("추가내용");
-        boardVO.setBoardWriter("추가작성자");
+        boardVO.setBoardTitle("테스트 제목2");
+        boardVO.setBoardWriter("testB");
+        boardVO.setBoardContent("테스트 내용2");
         boardMapper.insert(boardVO);
+        log.info("추가된 게시글 번호: " + boardVO.getBoardNumber());
     }
 
-    // 수정
     @Test
-    public void update(){
-        BoardVO boardVO = boardMapper.select(9L);
+    public void updateTest(){
+        BoardVO boardVO  = boardMapper.select(1L);
         Assertions.assertNotNull(boardVO);
-        boardVO.setBoardWriter("작성자 수정완료");
-        boardVO.setBoardContent("내용 수정완료");
-        boardVO.setBoardTitle("제목 수정완료");
-        boardMapper.update(boardVO);
+        boardVO.setBoardTitle("수정된 게시글 제목");
+        log.info("UPDATE COUNT: " + boardMapper.update(boardVO));
     }
 
-    // 삭제
     @Test
-    public void delete(){
-        BoardVO boardVO = boardMapper.select(9L);
+    public void deleteTest(){
+        Long boardNumber = 2L;
+        BoardVO boardVO = boardMapper.select(boardNumber);
         Assertions.assertNotNull(boardVO);
-        boardMapper.delete(9L);
+        boardMapper.delete(boardNumber);
     }
-
-
 }

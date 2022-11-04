@@ -7,8 +7,8 @@ import org.springframework.stereotype.Component;
 @Data
 public class BoardVO {
     private Long boardNumber;
-    private String boardWriter;
     private String boardTitle;
+    private String boardWriter;
     private String boardContent;
     private String boardRegisterDate;
     private String boardUpdateDate;

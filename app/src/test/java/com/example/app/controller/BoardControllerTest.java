@@ -19,7 +19,7 @@ public class BoardControllerTest {
     @Autowired
     private WebApplicationContext webApplicationContext;
 
-    //    브라우저에서 URL을 요청한 것과 같은 환경을 구성해준다.
+//    브라우저에서 URL을 요청한 것과 같은 환경을 구성해준다.
     private MockMvc mockMvc;
 
     @BeforeEach
@@ -46,16 +46,16 @@ public class BoardControllerTest {
 //        log.info(mockMvc.perform(MockMvcRequestBuilders.get("/board/update")
 //                .param("boardNumber", "7")).andReturn().getModelAndView().getModelMap().toString());
         log.info(mockMvc.perform(MockMvcRequestBuilders.post("/board/update")
-                .param("boardNumber", "21")
-                .param("boardTitle", "1수정된 제목1")
-                .param("boardContent", "1수정된 내용1"))
+                .param("boardNumber", "7")
+                .param("boardTitle", "수정된 제목1")
+                .param("boardContent", "수정된 내용1"))
                 .andReturn().getModelAndView().getModelMap().toString());
     }
 
     @Test
     public void deleteTest() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.post("/board/delete")
-                .param("boardNumber", "21"))
+                .param("boardNumber", "7"))
                 .andExpect(MockMvcResultMatchers.status().is3xxRedirection());
     }
 }
