@@ -8,6 +8,8 @@ import org.springframework.stereotype.Component;
 public class ProductVO {
     private int productNumber;
     private String productName;
-    private String productCompany;
+    private String productProducers;
     private int productPrice;
+    private int productRegisterDate;
+    private int productUpdateDate;
 }
