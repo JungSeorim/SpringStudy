@@ -26,7 +26,9 @@ public class BoardController {
     @GetMapping("/list")
     public void list(Criteria criteria, Model model){
         PageDTO pageDTO = new PageDTO();
+        //전달 받은 페이지가 없다면
         if(criteria.getPage() == 0){
+            //기본생성자
             criteria.createCriteria();
         }
         pageDTO.createPageDTO(criteria, boardService.getTotal());

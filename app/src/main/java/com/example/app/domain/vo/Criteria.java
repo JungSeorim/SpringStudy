@@ -11,6 +11,7 @@ public class Criteria {
     private int amount;
 
     public void createCriteria(){
+        //default값으로 넣어줌
         createCriteria(1, 10);
     }
 
