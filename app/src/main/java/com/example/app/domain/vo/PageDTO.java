@@ -25,7 +25,6 @@ public class PageDTO {
         createPageDTO(criteria, total, 10);
     }
 
-    //받아올 것은 criteria, 전체 개수, 현재 페이지
     public void createPageDTO(Criteria criteria, int total, int pageCount){
         this.criteria = criteria;
         this.total = total;
