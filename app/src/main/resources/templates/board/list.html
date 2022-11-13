@@ -86,7 +86,6 @@
                         <a class="changePage" th:href="*{endPage + 1}" th:if="*{next}"><code>></code></a>
                     </div>
                     <form th:action="@{/board/list}" th:object="${criteria}" name="pageForm">
-                        <!--page는 현재 페이지-->
                         <input type="hidden" th:field="*{page}">
                         <input type="hidden" th:field="*{amount}">
                         <input type="hidden" th:field="*{type}">
@@ -129,10 +128,6 @@
         history.replaceState({}, null, null);
     });
 
-/*
-    검색결과를 페이징처리하기 위해 js에서 처리해준다.
-    (Criteria의 page(?), amount,(10개), type(검색 다중선택), keyword("검색어") 중 page만 바뀜)
-*/
     $pages.on("click", function(e){
         e.preventDefault();
         $(document.pageForm.page).val($(this).attr("href"));
