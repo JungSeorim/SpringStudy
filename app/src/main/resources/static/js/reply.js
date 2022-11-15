@@ -2,6 +2,8 @@
 * /board/reply.html
 * */
 
+
+// 서비스에 대한 기능들을 하나의 모듈로 묶어서 처리한다.
 let replyService = (function(){
     function add(reply, callback, error){
         $.ajax({
@@ -22,13 +24,13 @@ let replyService = (function(){
         });
     }
 
-    function getList(boardNumber, callback, error){
+    function getList(param, callback, error){
         $.ajax({
-            url: "/reply/list/" + boardNumber,
+            url: "/reply/list/" + param.boardNumber + "/" + (param.page || 1),
             type: "get",
-            success: function(replies, status, xhr){
+            success: function(replyDTO, status, xhr){
                 if(callback){
-                    callback(replies);
+                    callback(replyDTO);
                 }
             },
             error: function(xhr, status, err){
@@ -61,9 +63,9 @@ let replyService = (function(){
             url: "/reply/" + replyNumber,
             type: "delete",
             success: function(text){
-                if(callback){
-                    callback(text);
-                }
+               if(callback){
+                   callback(text);
+               }
             },
             error: function(xhr, status, err){
                 if(error){
@@ -145,4 +147,33 @@ let replyService = (function(){
 
     return {add: add, getList: getList, read: read, remove: remove, modify: modify, getReplyDate: getReplyDate, timeForToday: timeForToday}
 })();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

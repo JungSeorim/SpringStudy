@@ -1,0 +1,334 @@
+1668489742428|124|statement|connection 0|url jdbc:p6spy:oracle:thin:@localhost:1521:XE|     drop table tbl_member cascade constraints|     drop table tbl_member cascade constraints
+1668489742444|13|statement|connection 0|url jdbc:p6spy:oracle:thin:@localhost:1521:XE|     drop sequence hibernate_sequence|     drop sequence hibernate_sequence
+1668489742458|6|statement|connection 0|url jdbc:p6spy:oracle:thin:@localhost:1521:XE|create sequence hibernate_sequence start with 1 increment by 1|create sequence hibernate_sequence start with 1 increment by 1
+1668489742505|42|statement|connection 0|url jdbc:p6spy:oracle:thin:@localhost:1521:XE|     create table tbl_member (        member_id number(19,0) not null,         member_age number(10,0),         member_email varchar2(255),         member_name varchar2(255),         member_password varchar2(255),         member_type number(10,0),         primary key (member_id)     )|     create table tbl_member (        member_id number(19,0) not null,         member_age number(10,0),         member_email varchar2(255),         member_name varchar2(255),         member_password varchar2(255),         member_type number(10,0),         primary key (member_id)     )
+1668489742537|31|statement|connection 0|url jdbc:p6spy:oracle:thin:@localhost:1521:XE|     alter table tbl_member         add constraint UK_s35vtuk3bgund1wqi78odjvfm unique (member_email)|     alter table tbl_member         add constraint UK_s35vtuk3bgund1wqi78odjvfm unique (member_email)
+1668489771520|56|statement|connection 0|url jdbc:p6spy:oracle:thin:@localhost:1521:XE|     drop table tbl_member cascade constraints|     drop table tbl_member cascade constraints
+1668489771525|3|statement|connection 0|url jdbc:p6spy:oracle:thin:@localhost:1521:XE|     drop sequence hibernate_sequence|     drop sequence hibernate_sequence
+1668489771533|2|statement|connection 0|url jdbc:p6spy:oracle:thin:@localhost:1521:XE|create sequence hibernate_sequence start with 1 increment by 1|create sequence hibernate_sequence start with 1 increment by 1
+1668489771596|59|statement|connection 0|url jdbc:p6spy:oracle:thin:@localhost:1521:XE|     create table tbl_member (        member_id number(19,0) not null,         member_age number(10,0),         member_email varchar2(255),         member_name varchar2(255),         member_password varchar2(255),         member_type number(10,0),         primary key (member_id)     )|     create table tbl_member (        member_id number(19,0) not null,         member_age number(10,0),         member_email varchar2(255),         member_name varchar2(255),         member_password varchar2(255),         member_type number(10,0),         primary key (member_id)     )
+1668489771616|17|statement|connection 0|url jdbc:p6spy:oracle:thin:@localhost:1521:XE|     alter table tbl_member         add constraint UK_s35vtuk3bgund1wqi78odjvfm unique (member_email)|     alter table tbl_member         add constraint UK_s35vtuk3bgund1wqi78odjvfm unique (member_email)
+1668489776842|15ms|statement|connection 0|
+    select
+        hibernate_sequence.nextval 
+    from
+        dual
+1668489776942|1ms|statement|connection 0|
+    select
+        hibernate_sequence.nextval 
+    from
+        dual
+1668489776997|19ms|statement|connection 0|
+    insert 
+    into
+        tbl_member
+        (member_age, member_email, member_name, member_password, member_type, member_id) 
+    values
+        (20, 'tedhan1204@gmail.com', '한동석', '1234', 0, 1)
+1668489777001|0ms|statement|connection 0|
+    insert 
+    into
+        tbl_member
+        (member_age, member_email, member_name, member_password, member_type, member_id) 
+    values
+        (20, 'jsh0419@gmail.com', '장선홍', '5060', 1, 2)
+1668489777039|7ms|statement|connection 0|
+    select
+        member0_.member_id as member_i1_0_0_,
+        member0_.member_age as member_a2_0_0_,
+        member0_.member_email as member_e3_0_0_,
+        member0_.member_name as member_n4_0_0_,
+        member0_.member_password as member_p5_0_0_,
+        member0_.member_type as member_t6_0_0_ 
+    from
+        tbl_member member0_ 
+    where
+        member0_.member_id=1
+1668489777071|4ms|statement|connection 0|
+    delete 
+    from
+        tbl_member 
+    where
+        member_id=1
+1668489777236|1ms|commit|connection 0|
+1668491013392|55|statement|connection 0|url jdbc:p6spy:oracle:thin:@localhost:1521:XE|     drop table tbl_member cascade constraints|     drop table tbl_member cascade constraints
+1668491013402|8|statement|connection 0|url jdbc:p6spy:oracle:thin:@localhost:1521:XE|     drop table tbl_super_car cascade constraints|     drop table tbl_super_car cascade constraints
+1668491013426|4|statement|connection 0|url jdbc:p6spy:oracle:thin:@localhost:1521:XE|     drop sequence hibernate_sequence|     drop sequence hibernate_sequence
+1668491013438|4|statement|connection 0|url jdbc:p6spy:oracle:thin:@localhost:1521:XE|create sequence hibernate_sequence start with 1 increment by 1|create sequence hibernate_sequence start with 1 increment by 1
+1668491013518|76|statement|connection 0|url jdbc:p6spy:oracle:thin:@localhost:1521:XE|     create table tbl_member (        member_id number(19,0) not null,         member_age number(10,0),         member_email varchar2(255),         member_name varchar2(255),         member_password varchar2(255),         member_type number(10,0),         primary key (member_id)     )|     create table tbl_member (        member_id number(19,0) not null,         member_age number(10,0),         member_email varchar2(255),         member_name varchar2(255),         member_password varchar2(255),         member_type number(10,0),         primary key (member_id)     )
+1668491013553|34|statement|connection 0|url jdbc:p6spy:oracle:thin:@localhost:1521:XE|     create table tbl_super_car (        super_car_id number(19,0) not null,         super_car_brand varchar2(255),         super_car_color varchar2(255),         super_car_name varchar2(255),         super_car_price number(19,0),         primary key (super_car_id)     )|     create table tbl_super_car (        super_car_id number(19,0) not null,         super_car_brand varchar2(255),         super_car_color varchar2(255),         super_car_name varchar2(255),         super_car_price number(19,0),         primary key (super_car_id)     )
+1668491013571|17|statement|connection 0|url jdbc:p6spy:oracle:thin:@localhost:1521:XE|     alter table tbl_member         add constraint UK_s35vtuk3bgund1wqi78odjvfm unique (member_email)|     alter table tbl_member         add constraint UK_s35vtuk3bgund1wqi78odjvfm unique (member_email)
+1668491019547|21ms|statement|connection 0|
+    select
+        hibernate_sequence.nextval 
+    from
+        dual
+1668491019747|1ms|statement|connection 0|
+    select
+        hibernate_sequence.nextval 
+    from
+        dual
+1668491019843|26ms|statement|connection 0|
+    insert 
+    into
+        tbl_super_car
+        (super_car_brand, super_car_color, super_car_name, super_car_price, super_car_id) 
+    values
+        ('부가티', 'black', 'BUGATTI', 6660000000, 1)
+1668491019850|2ms|statement|connection 0|
+    insert 
+    into
+        tbl_super_car
+        (super_car_brand, super_car_color, super_car_name, super_car_price, super_car_id) 
+    values
+        ('마세라티', 'white', 'Maserati', 300000000, 2)
+1668491019855|1ms|commit|connection 0|
+1668491197576|34|statement|connection 0|url jdbc:p6spy:oracle:thin:@localhost:1521:XE|     drop table tbl_member cascade constraints|     drop table tbl_member cascade constraints
+1668491197604|27|statement|connection 0|url jdbc:p6spy:oracle:thin:@localhost:1521:XE|     drop table tbl_super_car cascade constraints|     drop table tbl_super_car cascade constraints
+1668491197610|5|statement|connection 0|url jdbc:p6spy:oracle:thin:@localhost:1521:XE|     drop sequence hibernate_sequence|     drop sequence hibernate_sequence
+1668491197617|2|statement|connection 0|url jdbc:p6spy:oracle:thin:@localhost:1521:XE|create sequence hibernate_sequence start with 1 increment by 1|create sequence hibernate_sequence start with 1 increment by 1
+1668491197655|33|statement|connection 0|url jdbc:p6spy:oracle:thin:@localhost:1521:XE|     create table tbl_member (        member_id number(19,0) not null,         member_age number(10,0),         member_email varchar2(255),         member_name varchar2(255),         member_password varchar2(255),         member_type number(10,0),         primary key (member_id)     )|     create table tbl_member (        member_id number(19,0) not null,         member_age number(10,0),         member_email varchar2(255),         member_name varchar2(255),         member_password varchar2(255),         member_type number(10,0),         primary key (member_id)     )
+1668491197694|37|statement|connection 0|url jdbc:p6spy:oracle:thin:@localhost:1521:XE|     create table tbl_super_car (        super_car_id number(19,0) not null,         super_car_brand varchar2(255),         super_car_color varchar2(255),         super_car_name varchar2(255),         super_car_price number(19,0),         primary key (super_car_id)     )|     create table tbl_super_car (        super_car_id number(19,0) not null,         super_car_brand varchar2(255),         super_car_color varchar2(255),         super_car_name varchar2(255),         super_car_price number(19,0),         primary key (super_car_id)     )
+1668491197724|29|statement|connection 0|url jdbc:p6spy:oracle:thin:@localhost:1521:XE|     alter table tbl_member         add constraint UK_s35vtuk3bgund1wqi78odjvfm unique (member_email)|     alter table tbl_member         add constraint UK_s35vtuk3bgund1wqi78odjvfm unique (member_email)
+1668491202068|13ms|statement|connection 0|
+    select
+        hibernate_sequence.nextval 
+    from
+        dual
+1668491202335|127ms|statement|connection 0|
+    insert 
+    into
+        tbl_super_car
+        (super_car_brand, super_car_color, super_car_name, super_car_price, super_car_id) 
+    values
+        ('맥라렌', 'RED', 'McLaren', 330000000, 1)
+1668491202343|1ms|commit|connection 0|
+1668491284794|41|statement|connection 0|url jdbc:p6spy:oracle:thin:@localhost:1521:XE|     drop table tbl_member cascade constraints|     drop table tbl_member cascade constraints
+1668491284822|26|statement|connection 0|url jdbc:p6spy:oracle:thin:@localhost:1521:XE|     drop table tbl_super_car cascade constraints|     drop table tbl_super_car cascade constraints
+1668491284826|3|statement|connection 0|url jdbc:p6spy:oracle:thin:@localhost:1521:XE|     drop sequence hibernate_sequence|     drop sequence hibernate_sequence
+1668491284836|3|statement|connection 0|url jdbc:p6spy:oracle:thin:@localhost:1521:XE|create sequence hibernate_sequence start with 1 increment by 1|create sequence hibernate_sequence start with 1 increment by 1
+1668491284870|29|statement|connection 0|url jdbc:p6spy:oracle:thin:@localhost:1521:XE|     create table tbl_member (        member_id number(19,0) not null,         member_age number(10,0),         member_email varchar2(255),         member_name varchar2(255),         member_password varchar2(255),         member_type number(10,0),         primary key (member_id)     )|     create table tbl_member (        member_id number(19,0) not null,         member_age number(10,0),         member_email varchar2(255),         member_name varchar2(255),         member_password varchar2(255),         member_type number(10,0),         primary key (member_id)     )
+1668491284898|28|statement|connection 0|url jdbc:p6spy:oracle:thin:@localhost:1521:XE|     create table tbl_super_car (        super_car_id number(19,0) not null,         super_car_brand varchar2(255),         super_car_color varchar2(255),         super_car_name varchar2(255),         super_car_price number(19,0),         primary key (super_car_id)     )|     create table tbl_super_car (        super_car_id number(19,0) not null,         super_car_brand varchar2(255),         super_car_color varchar2(255),         super_car_name varchar2(255),         super_car_price number(19,0),         primary key (super_car_id)     )
+1668491284909|9|statement|connection 0|url jdbc:p6spy:oracle:thin:@localhost:1521:XE|     alter table tbl_member         add constraint UK_s35vtuk3bgund1wqi78odjvfm unique (member_email)|     alter table tbl_member         add constraint UK_s35vtuk3bgund1wqi78odjvfm unique (member_email)
+1668491289301|11ms|statement|connection 0|
+    select
+        hibernate_sequence.nextval 
+    from
+        dual
+1668491289393|0ms|statement|connection 0|
+    select
+        hibernate_sequence.nextval 
+    from
+        dual
+1668491289396|1ms|statement|connection 0|
+    select
+        hibernate_sequence.nextval 
+    from
+        dual
+1668491289499|37ms|statement|connection 0|
+    insert 
+    into
+        tbl_super_car
+        (super_car_brand, super_car_color, super_car_name, super_car_price, super_car_id) 
+    values
+        ('부가티', 'black', 'BUGATTI', 6660000000, 1)
+1668491289506|1ms|statement|connection 0|
+    insert 
+    into
+        tbl_super_car
+        (super_car_brand, super_car_color, super_car_name, super_car_price, super_car_id) 
+    values
+        ('마세라티', 'white', 'Maserati', 300000000, 2)
+1668491289509|2ms|statement|connection 0|
+    insert 
+    into
+        tbl_super_car
+        (super_car_brand, super_car_color, super_car_name, super_car_price, super_car_id) 
+    values
+        ('맥라렌', 'RED', 'McLaren', 330000000, 3)
+1668491289515|2ms|commit|connection 0|
+1668492143750|59|statement|connection 0|url jdbc:p6spy:oracle:thin:@localhost:1521:XE|     drop table tbl_member cascade constraints|     drop table tbl_member cascade constraints
+1668492143772|20|statement|connection 0|url jdbc:p6spy:oracle:thin:@localhost:1521:XE|     drop table tbl_super_car cascade constraints|     drop table tbl_super_car cascade constraints
+1668492143777|4|statement|connection 0|url jdbc:p6spy:oracle:thin:@localhost:1521:XE|     drop sequence hibernate_sequence|     drop sequence hibernate_sequence
+1668492143786|3|statement|connection 0|url jdbc:p6spy:oracle:thin:@localhost:1521:XE|create sequence hibernate_sequence start with 1 increment by 1|create sequence hibernate_sequence start with 1 increment by 1
+1668492143826|33|statement|connection 0|url jdbc:p6spy:oracle:thin:@localhost:1521:XE|     create table tbl_member (        member_id number(19,0) not null,         member_age number(10,0),         member_email varchar2(255),         member_name varchar2(255),         member_password varchar2(255),         member_type number(10,0),         primary key (member_id)     )|     create table tbl_member (        member_id number(19,0) not null,         member_age number(10,0),         member_email varchar2(255),         member_name varchar2(255),         member_password varchar2(255),         member_type number(10,0),         primary key (member_id)     )
+1668492143859|32|statement|connection 0|url jdbc:p6spy:oracle:thin:@localhost:1521:XE|     create table tbl_super_car (        super_car_id number(19,0) not null,         super_car_brand varchar2(255),         super_car_color varchar2(255),         super_car_name varchar2(255),         super_car_price number(19,0),         primary key (super_car_id)     )|     create table tbl_super_car (        super_car_id number(19,0) not null,         super_car_brand varchar2(255),         super_car_color varchar2(255),         super_car_name varchar2(255),         super_car_price number(19,0),         primary key (super_car_id)     )
+1668492143881|21|statement|connection 0|url jdbc:p6spy:oracle:thin:@localhost:1521:XE|     alter table tbl_member         add constraint UK_s35vtuk3bgund1wqi78odjvfm unique (member_email)|     alter table tbl_member         add constraint UK_s35vtuk3bgund1wqi78odjvfm unique (member_email)
+1668492149106|28ms|statement|connection 0|
+    select
+        supercar0_.super_car_id as super_ca1_1_0_,
+        supercar0_.super_car_brand as super_ca2_1_0_,
+        supercar0_.super_car_color as super_ca3_1_0_,
+        supercar0_.super_car_name as super_ca4_1_0_,
+        supercar0_.super_car_price as super_ca5_1_0_ 
+    from
+        tbl_super_car supercar0_ 
+    where
+        supercar0_.super_car_id=2
+1668492149281|4ms|commit|connection 0|
+1668492558471|57|statement|connection 0|url jdbc:p6spy:oracle:thin:@localhost:1521:XE|     drop table tbl_member cascade constraints|     drop table tbl_member cascade constraints
+1668492558495|22|statement|connection 0|url jdbc:p6spy:oracle:thin:@localhost:1521:XE|     drop table tbl_super_car cascade constraints|     drop table tbl_super_car cascade constraints
+1668492558500|4|statement|connection 0|url jdbc:p6spy:oracle:thin:@localhost:1521:XE|     drop sequence hibernate_sequence|     drop sequence hibernate_sequence
+1668492558508|2|statement|connection 0|url jdbc:p6spy:oracle:thin:@localhost:1521:XE|create sequence hibernate_sequence start with 1 increment by 1|create sequence hibernate_sequence start with 1 increment by 1
+1668492558543|30|statement|connection 0|url jdbc:p6spy:oracle:thin:@localhost:1521:XE|     create table tbl_member (        member_id number(19,0) not null,         member_age number(10,0),         member_email varchar2(255),         member_name varchar2(255),         member_password varchar2(255),         member_type number(10,0),         primary key (member_id)     )|     create table tbl_member (        member_id number(19,0) not null,         member_age number(10,0),         member_email varchar2(255),         member_name varchar2(255),         member_password varchar2(255),         member_type number(10,0),         primary key (member_id)     )
+1668492558572|27|statement|connection 0|url jdbc:p6spy:oracle:thin:@localhost:1521:XE|     create table tbl_super_car (        super_car_id number(19,0) not null,         super_car_brand varchar2(255),         super_car_color varchar2(255),         super_car_name varchar2(255),         super_car_price number(19,0),         primary key (super_car_id)     )|     create table tbl_super_car (        super_car_id number(19,0) not null,         super_car_brand varchar2(255),         super_car_color varchar2(255),         super_car_name varchar2(255),         super_car_price number(19,0),         primary key (super_car_id)     )
+1668492558588|15|statement|connection 0|url jdbc:p6spy:oracle:thin:@localhost:1521:XE|     alter table tbl_member         add constraint UK_s35vtuk3bgund1wqi78odjvfm unique (member_email)|     alter table tbl_member         add constraint UK_s35vtuk3bgund1wqi78odjvfm unique (member_email)
+1668492563691|25ms|statement|connection 0|
+    select
+        supercar0_.super_car_id as super_ca1_1_0_,
+        supercar0_.super_car_brand as super_ca2_1_0_,
+        supercar0_.super_car_color as super_ca3_1_0_,
+        supercar0_.super_car_name as super_ca4_1_0_,
+        supercar0_.super_car_price as super_ca5_1_0_ 
+    from
+        tbl_super_car supercar0_ 
+    where
+        supercar0_.super_car_id=2
+1668492563834|0ms|rollback|connection 0|
+1668493411682|24|statement|connection 0|url jdbc:p6spy:oracle:thin:@localhost:1521:XE|select * from all_sequences|select * from all_sequences
+1668493415967|12ms|statement|connection 0|
+    select
+        supercar0_.super_car_id as super_ca1_1_0_,
+        supercar0_.super_car_brand as super_ca2_1_0_,
+        supercar0_.super_car_color as super_ca3_1_0_,
+        supercar0_.super_car_name as super_ca4_1_0_,
+        supercar0_.super_car_price as super_ca5_1_0_ 
+    from
+        tbl_super_car supercar0_ 
+    where
+        supercar0_.super_car_id=2
+1668493416044|0ms|rollback|connection 0|
+1668493530219|15|statement|connection 0|url jdbc:p6spy:oracle:thin:@localhost:1521:XE|select * from all_sequences|select * from all_sequences
+1668493535150|3ms|statement|connection 0|
+    select
+        hibernate_sequence.nextval 
+    from
+        dual
+1668493535235|1ms|statement|connection 0|
+    select
+        hibernate_sequence.nextval 
+    from
+        dual
+1668493535238|0ms|statement|connection 0|
+    select
+        hibernate_sequence.nextval 
+    from
+        dual
+1668493535307|15ms|statement|connection 0|
+    insert 
+    into
+        tbl_super_car
+        (super_car_brand, super_car_color, super_car_name, super_car_price, super_car_id) 
+    values
+        ('부가티', 'black', 'BUGATTI', 8000000000, 1)
+1668493535311|1ms|statement|connection 0|
+    insert 
+    into
+        tbl_super_car
+        (super_car_brand, super_car_color, super_car_name, super_car_price, super_car_id) 
+    values
+        ('마세라티', 'white', 'Maserati', 300000000, 2)
+1668493535313|1ms|statement|connection 0|
+    insert 
+    into
+        tbl_super_car
+        (super_car_brand, super_car_color, super_car_name, super_car_price, super_car_id) 
+    values
+        ('맥라렌', 'RED', 'McLaren', 330000000, 3)
+1668493535318|1ms|commit|connection 0|
+1668493578940|18|statement|connection 0|url jdbc:p6spy:oracle:thin:@localhost:1521:XE|select * from all_sequences|select * from all_sequences
+1668493583831|44ms|statement|connection 0|
+    select
+        supercar0_.super_car_id as super_ca1_1_0_,
+        supercar0_.super_car_brand as super_ca2_1_0_,
+        supercar0_.super_car_color as super_ca3_1_0_,
+        supercar0_.super_car_name as super_ca4_1_0_,
+        supercar0_.super_car_price as super_ca5_1_0_ 
+    from
+        tbl_super_car supercar0_ 
+    where
+        supercar0_.super_car_id=2
+1668493584037|3ms|statement|connection 0|
+    delete 
+    from
+        tbl_super_car 
+    where
+        super_car_id=2
+1668493584046|1ms|commit|connection 0|
+1668493679502|14|statement|connection 0|url jdbc:p6spy:oracle:thin:@localhost:1521:XE|select * from all_sequences|select * from all_sequences
+1668493683620|11ms|statement|connection 0|
+    select
+        supercar0_.super_car_id as super_ca1_1_0_,
+        supercar0_.super_car_brand as super_ca2_1_0_,
+        supercar0_.super_car_color as super_ca3_1_0_,
+        supercar0_.super_car_name as super_ca4_1_0_,
+        supercar0_.super_car_price as super_ca5_1_0_ 
+    from
+        tbl_super_car supercar0_ 
+    where
+        supercar0_.super_car_id=1
+1668493683771|1ms|commit|connection 0|
+1668493838586|15|statement|connection 0|url jdbc:p6spy:oracle:thin:@localhost:1521:XE|select * from all_sequences|select * from all_sequences
+1668493848285|1ms|statement|connection 0|
+    select
+        hibernate_sequence.nextval 
+    from
+        dual
+1668493848409|8ms|statement|connection 0|
+    select
+        hibernate_sequence.nextval 
+    from
+        dual
+1668493848412|1ms|statement|connection 0|
+    select
+        hibernate_sequence.nextval 
+    from
+        dual
+1668493848646|131ms|statement|connection 0|
+    insert 
+    into
+        tbl_super_car
+        (super_car_brand, super_car_color, super_car_name, super_car_price, super_car_id) 
+    values
+        ('부가티', 'black', 'BUGATTI', 8000000000, 4)
+1668493848652|1ms|statement|connection 0|
+    insert 
+    into
+        tbl_super_car
+        (super_car_brand, super_car_color, super_car_name, super_car_price, super_car_id) 
+    values
+        ('마세라티', 'white', 'Maserati', 300000000, 5)
+1668493848655|2ms|statement|connection 0|
+    insert 
+    into
+        tbl_super_car
+        (super_car_brand, super_car_color, super_car_name, super_car_price, super_car_id) 
+    values
+        ('맥라렌', 'RED', 'McLaren', 330000000, 6)
+1668493848662|2ms|commit|connection 0|
+1668493850193|26|statement|connection 0|url jdbc:p6spy:oracle:thin:@localhost:1521:XE|select * from all_sequences|select * from all_sequences
+1668493855273|13ms|statement|connection 0|
+    select
+        supercar0_.super_car_id as super_ca1_1_0_,
+        supercar0_.super_car_brand as super_ca2_1_0_,
+        supercar0_.super_car_color as super_ca3_1_0_,
+        supercar0_.super_car_name as super_ca4_1_0_,
+        supercar0_.super_car_price as super_ca5_1_0_ 
+    from
+        tbl_super_car supercar0_ 
+    where
+        supercar0_.super_car_id=1
+1668493855452|1ms|commit|connection 0|
+1668493937454|13|statement|connection 0|url jdbc:p6spy:oracle:thin:@localhost:1521:XE|select * from all_sequences|select * from all_sequences
+1668493941399|12ms|statement|connection 0|
+    select
+        supercar0_.super_car_id as super_ca1_1_0_,
+        supercar0_.super_car_brand as super_ca2_1_0_,
+        supercar0_.super_car_color as super_ca3_1_0_,
+        supercar0_.super_car_name as super_ca4_1_0_,
+        supercar0_.super_car_price as super_ca5_1_0_ 
+    from
+        tbl_super_car supercar0_ 
+    where
+        supercar0_.super_car_id=1
+1668493941608|1ms|commit|connection 0|
