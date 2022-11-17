@@ -2,7 +2,9 @@ package com.example.intermediate.repository;
 
 import com.example.intermediate.entity.Desktop;
 import com.example.intermediate.entity.Phone;
+import com.example.intermediate.type.Hardware;
 import lombok.extern.slf4j.Slf4j;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -11,7 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.*;
 
 @SpringBootTest
 @Slf4j
@@ -20,18 +22,48 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class ComputerRepositoryTest {
     @Autowired
     private DesktopRepository desktopRepository;
+
     @Autowired
     private PhoneRepository phoneRepository;
 
     @Test
     public void saveTest(){
-        Phone phone = new Phone();
         Desktop desktop = new Desktop();
+        Phone phone = new Phone();
+        Hardware hardware = new Hardware();
 
-        desktop.create("QHD+", "삼성","콩순이",800000L, LocalDateTime.now(),"8GB","512","1080","i7",LocalDateTime.now(),LocalDateTime.of(2022,12,25,0,0),"COX 청축");
-        phone.create("OLED", "애플","앱등",1400000L, LocalDateTime.now(),"8GB","256","1080","i7",LocalDateTime.now(),LocalDateTime.of(2022,11,16,0,0),"배터리 빵빵");
+        hardware.create(8, 512, "RTX3050", "Intel");
 
-        assertThat(desktopRepository.save(desktop).getComputerName()).isEqualTo("콩순이");
-        assertThat(phoneRepository.save(phone).getComputerName()).isEqualTo("앱등");
+        phone.create(640, "애플", "프로 14", 2_000_000, LocalDateTime.now(), hardware, 900);
+        desktop.create(1980, "삼성", "갤럭시북", 2_000_000, LocalDateTime.now(), hardware, "적축");
+
+        phoneRepository.save(phone);
+        desktopRepository.save(desktop);
+    }
+
+    @Test
+    public void updateTest(){
+//        assertThat(desktopRepository.findById(1l).get().getComputerBrand()).isEqualTo("삼성");
+//        desktopRepository.findById(2L).get().setComputerBrand("LG");
+        phoneRepository.findById(1L).get().setComputerBrand("삼성");
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

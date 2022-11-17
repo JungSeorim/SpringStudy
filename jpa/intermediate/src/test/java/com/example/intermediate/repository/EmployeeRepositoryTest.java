@@ -35,6 +35,11 @@ public class EmployeeRepositoryTest {
 
     }
 
+    @Test
+    public void findTest(){
+        assertThat(developerRepository.findByDeveloperLevel(4).get(0).getEmployeeName()).isEqualTo("한동석");
+    }
+
 }
 
 

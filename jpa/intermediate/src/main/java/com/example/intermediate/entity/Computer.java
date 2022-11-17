@@ -1,5 +1,27 @@
+/*
+* 컴퓨터(Computer)
+   해상도(Screen)
+   브랜드(Brand)
+   상품명(Name)
+   가격(Price)
+   출시일(ReleaseDate)
+   램(Ram)
+   SSD
+   GPU
+   Processor
+   등록일(CreatedDate)
+   수정일(UpdatedDate)
+
+데스크탑(Desktop)
+   키보드타입(Keyboard)
+
+핸드폰(Phone)
+   배터리용량(Battery)
+*
+* */
 package com.example.intermediate.entity;
 
+import com.example.intermediate.type.Hardware;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -7,64 +29,52 @@ import lombok.ToString;
 import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.*;
-import java.awt.*;
 import java.time.LocalDateTime;
 
-@Entity @Inheritance(strategy = InheritanceType.JOINED)
-@DiscriminatorColumn(name="DEVICE_KINDNESS")
-@Table(name="TBL_COMPUTER")
+@Entity
+@Inheritance(strategy = InheritanceType.JOINED)
+@DiscriminatorColumn(name = "ELECTRONIC_DEVICE")
+@Table(name = "TBL_COMPUTER")
 @Getter @Setter @ToString
 @NoArgsConstructor
-public class Computer {
-    @Id
-    @GeneratedValue
-    @Column(name="COMPUTER_ID")
+public class Computer extends Period{
+    @Id @GeneratedValue
     private Long computerId;
-
-    @Column(name="COMPUTER_SCREEN")
-    private String computerScreen;
-
-    @Column(name="COMPUTER_BRAND")
+    private int computerScreen;
     private String computerBrand;
-
-    @Column(name="COMPUTER_NAME")
     private String computerName;
-
-    @Column(name="COMPUTER_PRICE")
-    private Long computerPrice;
-
-    @Column(name="COMPUTER_RELEASE_DATE")
+    private int computerPrice;
     private LocalDateTime computerReleaseDate;
+    @Embedded // 모듈을 사용할 때 작성한다.
+    private Hardware hardware;
 
-    @Column(name="COMPUTER_RAM")
-    private String computerRam;
-
-    @Column(name="COMPUTER_SSD")
-    private String computerSsd;
-
-    @Column(name="COMPUTER_GPU")
-    private String computerGpu;
-
-    @Column(name="COMPUTER_PROCESSOR")
-    private String computerProcessor;
-
-    @Column(name="COMPUTER_CREATED_DATE")
-    private LocalDateTime computerCreatedDate;
-
-    @Column(name="COMPUTER_UPDATED_DATE")
-    private LocalDateTime computerUpdatedDate;
-
-    public void create(String computerScreen, String computerBrand, String computerName, Long computerPrice, LocalDateTime computerReleaseDate, String computerRam, String computerSsd, String computerGpu, String computerProcessor, LocalDateTime computerCreatedDate, LocalDateTime computerUpdatedDate) {
+    public void create(int computerScreen, String computerBrand, String computerName, int computerPrice, LocalDateTime computerReleaseDate, Hardware hardware) {
         this.computerScreen = computerScreen;
         this.computerBrand = computerBrand;
         this.computerName = computerName;
         this.computerPrice = computerPrice;
         this.computerReleaseDate = computerReleaseDate;
-        this.computerRam = computerRam;
-        this.computerSsd = computerSsd;
-        this.computerGpu = computerGpu;
-        this.computerProcessor = computerProcessor;
-        this.computerCreatedDate = computerCreatedDate;
-        this.computerUpdatedDate = computerUpdatedDate;
+        this.hardware = hardware;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
