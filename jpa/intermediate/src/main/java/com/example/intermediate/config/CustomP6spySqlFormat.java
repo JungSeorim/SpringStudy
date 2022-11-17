@@ -1,4 +1,4 @@
-package com.example.basic.config;
+package com.example.intermediate.config;
 
 import com.p6spy.engine.logging.Category;
 import com.p6spy.engine.spy.appender.MessageFormattingStrategy;

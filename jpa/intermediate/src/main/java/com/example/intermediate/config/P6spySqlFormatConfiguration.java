@@ -1,6 +1,5 @@
-package com.example.basic.config;
+package com.example.intermediate.config;
 
-import com.example.basic.config.CustomP6spySqlFormat;
 import com.p6spy.engine.spy.P6SpyOptions;
 import org.springframework.context.annotation.Configuration;
 

@@ -25,4 +25,12 @@ public class SuperCar {
     private Long superCarPrice;
     @Column(name = "SUPER_CAR_RELEASE_DATE")
     private LocalDateTime superCarReleaseDate;
+
+    public void create(SuperCarBrand superCarBrand, String superCarColor, String superCarName, Long superCarPrice, LocalDateTime superCarReleaseDate) {
+        this.superCarBrand = superCarBrand;
+        this.superCarColor = superCarColor;
+        this.superCarName = superCarName;
+        this.superCarPrice = superCarPrice;
+        this.superCarReleaseDate = superCarReleaseDate;
+    }
 }

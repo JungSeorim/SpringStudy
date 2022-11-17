@@ -24,7 +24,7 @@ public class SuperCarDAO {
         entityManager.remove(superCar);
     }
 
-    //    조회 시 NPE를 방어하기 위해 Optional로 리턴한다.
+//    조회 시 NPE를 방어하기 위해 Optional로 리턴한다.
     public Optional<SuperCar> findById(Long superCarId){
         return Optional.ofNullable(entityManager.find(SuperCar.class, superCarId));
     }
@@ -45,7 +45,7 @@ public class SuperCarDAO {
         return entityManager.createQuery("select count(s) from SuperCar s", Long.class).getSingleResult();
     }
 
-    //    파라미터 바인딩
+//    파라미터 바인딩
     public List<SuperCar> findSuperCarByReleaseDate(String superCarReleaseDate){
         return entityManager.createQuery("select s from SuperCar s where function('to_char', s.superCarReleaseDate, 'yyyyMMdd') = :superCarReleaseDate")
                 .setParameter("superCarReleaseDate", superCarReleaseDate).getResultList();
@@ -56,7 +56,7 @@ public class SuperCarDAO {
                 .setParameter("keyword", "%" + superCarColor + "%").getResultList();
     }
 
-    //    실습
+//    실습
 //    시작 날짜와 종료 날짜를 전달받은 뒤 해당 기간 내에 출시된 슈퍼카 목록 전체 조회
     public List<SuperCar> findSuperCarBetweenReleaseDate(LocalDateTime startDate, LocalDateTime endDate){
         return entityManager.createQuery("select s from SuperCar s where s.superCarReleaseDate between :startDate and :endDate")
@@ -64,4 +64,29 @@ public class SuperCarDAO {
                 .setParameter("endDate", endDate)
                 .getResultList();
     }
+
+//    페이징
+    public List<SuperCar> findAllPaging(int offset, int limit){
+        String q = "select s from SuperCar s order by s.superCarId desc";
+        return entityManager.createQuery(q, SuperCar.class)
+                .setFirstResult(offset) //0부터 시작
+                .setMaxResults(limit)
+                .getResultList();
+    }
+//    수정 (벌크 연산), 영속성 컨텍스트를 무시하고 SQL 반영
+    public int bulkUpdate(String superCarReleaseDate){
+        String q = "update SuperCar s set s.superCarPrice = s.superCarPrice * 1.1 where function('to_char', s.superCarReleaseDate, 'yyyyMMdd') = :superCarReleaseDate";
+        return entityManager.createQuery(q).setParameter("superCarReleaseDate", superCarReleaseDate).executeUpdate();
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
