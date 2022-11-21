@@ -39,7 +39,7 @@ public class EntityTest {
         memberB.setMemberAge(20);
         memberB.setMemberType(MemberType.ADMIN);
 
-//        영속성 컨텍스트에 등록, 1차 캐시에 저장
+//        영속성 컨텍스트에 등록, 1차 캐시에 저장(DB 저장X)
         entityManager.persist(memberA);
         entityManager.persist(memberB);
 
