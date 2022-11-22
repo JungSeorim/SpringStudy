@@ -20,7 +20,7 @@ import static org.assertj.core.api.Assertions.*;
 @Slf4j
 @Transactional
 @Rollback(false)
-public class CarTest {
+public class SuperCarTest {
     @Autowired
     private CarRepository carRepository;
 

@@ -8,7 +8,7 @@ import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
-public interface PetRepository extends JpaRepository<Pet, Long> {
+public interface PetRepository extends JpaRepository<Pet, Long>, PetCustomRepository {
     public List<Pet> findByPetName(@Param("petName") String petName);
 
     @Query("select p from Pet p join fetch p.owner")

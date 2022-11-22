@@ -7,7 +7,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "TBL_OWNER")
-@Getter @Setter @ToString
+@Getter @Setter @ToString(exclude = "pets")
 // 무분별한 생성을 막기 위해서 public보다는 protected로 설정하고, Spring에서 관리되는 대상이므로 private은 적절하지 않다.
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Owner {
@@ -16,6 +16,7 @@ public class Owner {
     private String ownerName;
     @Column(unique = true)
     private String ownerPhone;
+    private Integer ownerAge;
 
 //    다대일 양방향 관계
 //    양방향에서는 연관관계의 주인을 정해야 한다.
