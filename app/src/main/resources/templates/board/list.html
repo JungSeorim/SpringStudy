@@ -134,10 +134,15 @@
         document.pageForm.submit();
     });
 
+    /* 게시글을 누른 순간 보내줄 링크를 location.href로 설정하여 이동시킨다 */
+    // queryString = [[${pagination.criteria.queryString}]];
+    // $read = $("a.read");
+    // href = boardNumber
     $read.on("click", function(e){
         e.preventDefault();
         location.href = "/board/read" + queryString + "&boardNumber=" + $(this).attr("href");
     });
+
 
     $("a.write").on("click", function(e){
         e.preventDefault();
