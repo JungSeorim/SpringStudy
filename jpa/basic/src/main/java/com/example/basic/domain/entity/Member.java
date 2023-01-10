@@ -22,7 +22,7 @@ public class Member {
     private String memberPassword;
     @Column(name = "MEMBER_AGE")
     private int memberAge;
-    @Enumerated(EnumType.STRING)
+    @Enumerated(EnumType.STRING)    //문자열로 바꿔줘야 실제 그 상수(이넘타입의 이름'admin'등)가 문자열로 나옴
     @Column(name = "MEMBER_TYPE")
     private MemberType memberType;
 

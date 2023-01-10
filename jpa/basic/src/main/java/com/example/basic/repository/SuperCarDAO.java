@@ -20,6 +20,7 @@ public class SuperCarDAO {
         return entityManager.find(SuperCar.class, superCar.getSuperCarId());
     }
 
+//    파라미터를 SuperCar로 받는 이유는 먼저 find(select)한 후에 delete 해야함
     public void delete(SuperCar superCar){
         entityManager.remove(superCar);
     }

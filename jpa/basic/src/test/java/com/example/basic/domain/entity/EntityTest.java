@@ -21,8 +21,8 @@ public class EntityTest {
     private EntityManager entityManager;
 
     @Test
-    @Transactional
-    @Rollback(false)
+    @Transactional  //transaction 시작 begin() > 쿼리등록 persist() >쿼리 발동 flush() > 반영? commit() : 이 과정을 해줌
+    @Rollback(false)    //커밋이 안됨
     public void memberTest(){
         Member memberA = new Member();
         Member memberB = new Member();
@@ -53,18 +53,19 @@ public class EntityTest {
 //        캐시에 해당 ID가 있다면 SQL 조회 없이 캐시에서 가져온다(성능 최적화)
         Member findMember1 = entityManager.find(Member.class, 1L);
 
-//        entityManager.flush();
-//        entityManager.clear();
+//        entityManager.flush();    //flush에 저장되지 않은 것을 한번더 날려준다(?) : 비워주는 것이 아님
+//        entityManager.clear();    //캐시에 있는 것을 비워준다
 
         Member findMember2 = entityManager.find(Member.class, 1L);
 
-//        더티 체킹
+//        더티 체킹 : 상태의 변화를 감지하고 알아서 반영
+//        최초 조회 상태의 스냅샷과 트랜잭션이 끝난 시점을 비교하여 다른 점이 있다면 Update쿼리를 DB에 반영
         findMember2.setMemberPassword("0000");
 
 //        entityManager.flush();
 //        entityManager.clear();
 
-//        삭제를 할 경우 영속상태인 객체만 가능하다.
+//        삭제를 할 경우 영속상태(1차 캐시 등록X)인 객체만 가능하다.
         entityManager.remove(findMember2);
 
         entityManager.flush();
